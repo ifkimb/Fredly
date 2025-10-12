@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="nord">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início</title>
+</head>
+<body>
+ 
+    <div class="navbar bg-base-100 shadow-sm">
+        <div class="flex-1">
+            <a class="btn btn-ghost text-xl ">Fredly</a>
+        </div>
+        <div class="flex-none">
+            <ul class="menu menu-horizontal px-1">
+                <button class="btn btn-neutral">Menu</button>
+            </ul>
+        </div>
+    </div>
+ 
+    <header>
+		<nav class="menu">
+		    <div class="nav-wrapper">
+		      <a style="font-size: x-large;" href="#" class="brand-logo"><strong>Lista de Eventos</strong></a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		        <li><a href="/cadastrarEvento" class="waves-effect waves-light btn"><i class="material-icons left"></i>Crie um evento agora</a></li>
+		      </ul>
+		    </div>
+		</nav>
+	
+	</header>
+
+    <table class="container">
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Local</th>
+				<th>Data</th>
+				<th>Horario</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="evento : ${eventos}">
+				<td><a th:href="${(#mvc.url('EC#detalhesEvento').arg(0, evento.codigo)).build()}"><span th:text="${evento.nome}"></span></a></td>
+				<td><span th:text="${evento.local}"></span></td>
+				<td><span th:text="${evento.data}"></span></td>
+				<td><span th:text="${evento.horario}"></span></td>
+			</tr>
+		</tbody>
+	
+	</table>
+
+</body>
+</html>
+ 
