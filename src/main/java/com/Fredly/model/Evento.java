@@ -1,14 +1,32 @@
 package com.Fredly.model;
 
+import java.io.Serializable;
 import java.sql.Date;
-import java.sql.Time;
+import java.time.LocalTime;
 
-public class Evento {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
+@Entity
+public class Evento implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long codigo;
+
+
+    public long getCodigo() {
+        return codigo;
+    }
+    public void setCodigo(long codigo) {
+        this.codigo = codigo;
+    }
     private String nome;
     private String local;
     private Date data;
-    private Time horario;
+    private LocalTime horario;
     
     public String getNome() {
         return nome;
@@ -28,10 +46,10 @@ public class Evento {
     public void setData(Date data) {
         this.data = data;
     }
-    public Time getHorario() {
+    public LocalTime getHorario() {
         return horario;
     }
-    public void setHorario(Time horario) {
+    public void setHorario(LocalTime horario) {
         this.horario = horario;
     }
 
