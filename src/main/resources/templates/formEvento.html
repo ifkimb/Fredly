@@ -21,16 +21,33 @@
     </div>
     
     <form method="post">
-        Nome do Evento: <input type="text" value="" name="nome"/><br>
+        <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+        <legend class="fieldset-legend">Cadastre Seu Evento</legend>
+
+            <label class="label">Nome do Evento</label>
+            <input type="text" value="" name="nome" placeholder="Nome do Evento" />
+            
+            <label class="label">Local do Evento</label>
+            <input type="text" value="" name="local" placeholder="Local do Evento" />
+            <label class="label">Horário do Evento</label>
+            <input type="datetime-local" value="" name="horario" placeholder="Horário do Evento" />
+            <label class="label">Data do Evento</label>
+            <input type="date" value="" name="data" placeholder="Data do Evento" />
+            
+
+            
+        <!--Nome do Evento: <input type="text" value="" name="nome"/><br>
         <br>
         Local do Evento: <input type="text" value="" name="local"/><br>
         <br>
         Data do Evento: <input type="date" value="" name="data"/><br>
         <br>
-        Horário do Evento: <input type="text" value="" name="horario"/><br>
+        Horário do Evento: <input type="text" value="" name="horario"/><br>-->
         
-        <button class="btn btn-success" type="submit">Salvar</button>
-
+        <button class="btn btn-error mt-4" type="reset">Cancelar</button>
+        <button class="btn btn-sucess mt-4" type="submit">Salvar</button>
+        
+        </fieldset>
     </form>
    
 </body>
