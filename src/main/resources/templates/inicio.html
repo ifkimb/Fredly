@@ -37,6 +37,7 @@
     <thead class="bg-neutral text-neutral-content">
         <tr>
             <th>Nome</th>
+            <th>Tipo</th>
             <th>Local</th>
             <th>Data</th>
             <th>Horário</th>
@@ -45,6 +46,7 @@
     <tbody>
         <tr th:each="evento : ${eventos}">
             <td><span th:text="${evento.nome}"></span></td>
+            <td><span th:text="${evento.tipo}"></span></td>
             <td><span th:text="${evento.local}"></span></td>
             <td><span th:text="${evento.data}"></span></td>
             <td><span th:text="${evento.horario}"></span></td>
