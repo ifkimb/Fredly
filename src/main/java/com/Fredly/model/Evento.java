@@ -2,7 +2,6 @@ package com.Fredly.model;
 
 import java.io.Serializable;
 import java.sql.Date;
-import java.sql.Time;
 import java.time.LocalTime;
 
 import jakarta.persistence.Entity;

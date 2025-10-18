@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="nord">
+<head>
+   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Evento</title>
+</head>
+<body class="bg-base-200 min-h-screen">
+
+    <div class="navbar bg-base-100 shadow-sm px-6">
+        <div class="flex-1">
+            <a class="text-l"><strong>Fredly</strong></a>
+        </div>
+        <div class="flex-none">
+            <button class="btn btn-neutral btn-sm">Entrar</button>
+        </div>
+    </div>
+
+    <main class="max-w-3xl mx-auto mt-10 p-6 bg-base-100 shadow-md rounded-box">
+        <h1 class="text-3xl font-bold text-center mb-6">Detalhes do Evento</h1>
+
+        <div th:each="evento : ${evento}" class="space-y-3">
+            <p><strong>Nome:</strong> <span th:text="${evento.nome}"></span></p>
+            <p><strong>Tipo:</strong> <span th:text="${evento.tipo}"></span></p>
+            <p><strong>Local:</strong> <span th:text="${evento.local}"></span></p>
+            <p><strong>Data:</strong> <span th:text="${evento.data}"></span></p>
+            <p><strong>Horário:</strong> <span th:text="${evento.horario}"></span></p>
+
+            <div class="mt-6 flex justify-center">
+                <a href="/inicio" class="btn btn-primary">Voltar para lista</a>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

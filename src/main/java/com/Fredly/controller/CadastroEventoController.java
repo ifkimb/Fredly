@@ -6,10 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.Fredly.model.Evento;
 import com.Fredly.repository.EventoRepository;
@@ -39,5 +37,11 @@ public class CadastroEventoController {
         return "inicio"; 
     }
     
-
+    @GetMapping("/detalhesEvento/{codigo}")
+    public String detalhesEvento(@PathVariable Long codigo, Model model) {
+        Evento evento = er.findById(codigo).orElse(null);
+        model.addAttribute("evento", evento);
+        return "detalhesEvento";
+    }
+    
 }

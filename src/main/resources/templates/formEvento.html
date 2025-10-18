@@ -6,60 +6,66 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fredly</title>
+    <title>Cadastro de Evento</title>
 </head>
-<body>
+<body class="bg-base-200 min-h-screen flex flex-col">
+
     <div class="navbar bg-base-100 shadow-sm">
         <div class="flex-1">
-            <a class="btn btn-ghost text-xl ">Cadastro de Eventos</a>
+            <a class="text-l"><strong>Fredly</strong></a>
         </div>
         <div class="avatar">
             <div class="w-12 rounded-full">
-              <img src="https://images.icon-icons.com/2859/PNG/512/avatar_face_girl_female_woman_profile_smiley_happy_people_icon_181665.png" />
+                <img src="https://images.icon-icons.com/2859/PNG/512/avatar_face_girl_female_woman_profile_smiley_happy_people_icon_181665.png" alt="Avatar">
             </div>
-          </div>
+        </div>
     </div>
-    
-    <form method="post">
-        <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-        <legend class="fieldset-legend">Cadastre Seu Evento</legend>
 
-            <label class="label">Nome do Evento</label>
-            <input type="text" value="" name="nome" class="input input-accent" placeholder="Nome do Evento" />
-            <label class="label">Selecione o tipo do Evento:</label>
-            <select class="select select-accent" type="text" value="" name="tipo">
-                <option selected disabled>Tipo do Evento</option>
-                <option>Casamento</option>
-                <option>Chá de Bebê</option>
-                <option>Chá Revelação</option>
-                <option>Aniversário</option>
-                <option>Formatura</option>
-                <option>Bodas</option>
-                <option>Empresarial</option>
-                <option>Outros</option>
-            </select>
-            <label class="label">Local do Evento</label>
-            <input type="text" value="" name="local" class="input input-accent" placeholder="Local do Evento" />
-            <label class="label">Horário do Evento</label>
-            <input type="time" value="" name="horario" class="input input-accent" placeholder="Horário do Evento" />
-            <label class="label">Data do Evento</label>
-            <input type="date" value="" name="data" class="input input-accent" placeholder="Data do Evento" />
-            
-            
-        <!--Nome do Evento: <input type="text" value="" name="nome"/><br>
-        <br>
-        Local do Evento: <input type="text" value="" name="local"/><br>
-        <br>
-        Data do Evento: <input type="date" value="" name="data"/><br>
-        <br>
-        Horário do Evento: <input type="text" value="" name="horario"/><br>-->
-        
-        <button class="btn btn-error mt-4" type="reset">Cancelar</button>
-        <button class="btn btn-sucess mt-4" type="submit">Salvar</button>
-        
-        </fieldset>
-    </form>
-   
+    <main class="flex-grow flex justify-center items-center p-6">
+        <form method="post" class="card bg-base-100 shadow-lg w-full max-w-md p-6 rounded-2xl border border-base-300">
+            <h2 class="text-2xl font-bold text-center mb-6">Cadastre Seu Evento</h2>
+
+            <div class="form-control mb-4">
+                <label class="label font-semibold">Nome do Evento</label>
+                <input type="text" name="nome" class="input input-accent w-full" placeholder="Ex: Festa de Aniversário" required />
+            </div>
+
+            <div class="form-control mb-4">
+                <label class="label font-semibold">Tipo do Evento</label>
+                <select name="tipo" class="select select-accent w-full" required>
+                    <option disabled selected>Selecione o tipo</option>
+                    <option>Casamento</option>
+                    <option>Chá de Bebê</option>
+                    <option>Chá Revelação</option>
+                    <option>Aniversário</option>
+                    <option>Formatura</option>
+                    <option>Bodas</option>
+                    <option>Empresarial</option>
+                    <option>Outros</option>
+                </select>
+            </div>
+
+            <div class="form-control mb-4">
+                <label class="label font-semibold">Local do Evento</label>
+                <input type="text" name="local" class="input input-accent w-full" placeholder="Ex: Salão Central" required />
+            </div>
+
+            <div class="form-control mb-4">
+                <label class="label font-semibold">Data do Evento</label>
+                <input type="date" name="data" class="input input-accent w-full" required />
+            </div>
+
+            <div class="form-control mb-6">
+                <label class="label font-semibold">Horário do Evento</label>
+                <input type="time" name="horario" class="input input-accent w-full" required />
+            </div>
+
+            <div class="flex justify-between">
+                <a href="/inicio" class="btn btn-error w-[48%]">Cancelar</a>
+                <button type="submit" class="btn btn-success w-[48%]">Salvar</button>
+            </div>
+        </form>
+    </main>
+
 </body>
 </html>
- 
