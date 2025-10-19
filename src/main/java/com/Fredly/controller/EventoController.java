@@ -13,7 +13,7 @@ import com.Fredly.model.Evento;
 import com.Fredly.repository.EventoRepository;
 
 @Controller
-public class CadastroEventoController {
+public class EventoController {
     
     @Autowired
     private EventoRepository er;

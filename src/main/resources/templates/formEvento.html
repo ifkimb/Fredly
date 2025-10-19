@@ -60,6 +60,42 @@
                 <input type="time" name="horario" class="input input-accent w-full" required />
             </div>
 
+            <h2 class="text-2xl font-bold text-center mb-6">Cadastre Seu Cliente</h2>
+
+            <div class="form-control mb-4">
+                <label class="label font-semibold">Nome do Cliente</label>
+                <input type="text" name="nomecomp" class="input input-accent w-full" placeholder="Ex: João da Silva" required />
+            </div>
+
+            <div class="form-control mb-4">
+                <label class="label font-semibold">E-mail do Cliente</label>
+                <input type="email" name="email" class="input input-accent w-full" placeholder="Ex: joao@email.com" required />
+            </div>
+
+            <div class="form-control mb-4">
+                <label class="label font-semibold">Telefone do Cliente</label>
+                <input type="text" name="telefone" class="input input-accent w-full" placeholder="Ex: (11) 91234-5678" required />
+            </div>
+
+            <div class="form-control mb-4">
+                <label class="label font-semibold">Status do Cliente</label>
+                <select name="status" class="select select-accent w-full" required>
+                    <option disabled selected>Selecione o status</option>
+                    <option>Sem status</option>
+                    <option>Cliente em potencial</option>
+                    <option>Cliente interessado</option>
+                    <option>Proposta enviada</option>
+                    <option>Em negociação</option>
+                    <option>Negócio fechado</option>
+                    <option>Cliente perdido</option>
+                </select>
+            </div>
+
+            <div class="form-control mb-4">
+                <label class="label font-semibold">Observações</label>
+                <textarea name="observacoes" class="textarea textarea-accent w-full" placeholder="Observações sobre o cliente"></textarea>
+            </div>
+
             <div class="flex justify-between">
                 <a href="/inicio" class="btn btn-error w-[48%]">Cancelar</a>
                 <button type="submit" class="btn btn-success w-[48%]">Salvar</button>
