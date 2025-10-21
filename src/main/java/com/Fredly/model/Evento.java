@@ -14,12 +14,12 @@ public class Evento implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long codigo;
-    public long getCodigo() {
-        return codigo;
+    private long id_evento;
+    public long getId_evento() {
+        return id_evento;
     }
-    public void setCodigo(long codigo) {
-        this.codigo = codigo;
+    public void setId_evento(long id_evento) {
+        this.id_evento = id_evento;
     }
     private String nome;
     private String tipo;

@@ -23,12 +23,12 @@ public class EventoController {
         return "formEvento";
     }
 
+
      @PostMapping("/cadastrarEvento")
     public String salvarEvento(Evento evento) {
         er.save(evento);
         return "redirect:/inicio";
     }
-
 
      @GetMapping("/inicio")
     public String inicio(Model model) {

@@ -10,7 +10,14 @@ public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id_cliente;
+    public Long getId_cliente() {
+        return id_cliente;
+    }
+
+    public void setId_cliente(Long id_cliente) {
+        this.id_cliente = id_cliente;
+    }
 
     private String nomecliente;
     public String getNomecliente() {
@@ -30,12 +37,12 @@ public class Cliente {
         this.email = email;
     }
 
-    private String telefone;
-    public String getTelefone() {
+    private Long telefone;
+    public Long getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(String telefone) {
+    public void setTelefone(Long telefone) {
         this.telefone = telefone;
     }
 
@@ -58,12 +65,5 @@ public class Cliente {
         this.observacoes = observacoes;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
 }

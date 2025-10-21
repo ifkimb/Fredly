@@ -4,11 +4,11 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.Fredly.model.Evento;
+import com.Fredly.model.Cliente;
 
-public interface EventoRepository extends CrudRepository<Evento, Long> {
+public interface ClienteRepository extends CrudRepository<Cliente, Long> {
 
-    static List<Evento> listarTodos() {
+    static List<Cliente> listarTodos() {
         throw new UnsupportedOperationException("Unimplemented method 'listarTodos'");
     }
 
