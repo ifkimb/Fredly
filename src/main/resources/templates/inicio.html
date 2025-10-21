@@ -1,66 +1,101 @@
 <!DOCTYPE html>
 <html lang="pt-br" data-theme="nord">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Início</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Início</title>
 
-    <!-- Estilos DaisyUI + Tailwind -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/dist/full.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-base-200 min-h-screen">
 
-    <!-- Navbar -->
-    <div class="navbar bg-base-100 shadow-sm">
-        <div class="flex-1">
-            <a class="text-l"><strong>Fredly</strong></a>
-        </div>
-        <div class="flex-none">
-            <button class="btn btn-ghost btn-circle" aria-label="Menu">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
-        </div>
+  <!-- Navbar -->
+  <div class="navbar bg-base-100 shadow-sm">
+    <div class="flex-1">
+      <a class="text-l font-bold">Fredly</a>
     </div>
-    
-    <header class="p-6 text-center">
-        <h1 class="text-3xl font-bold mb-4">Lista de Eventos</h1>
-        <a href="/cadastrarEvento" class="btn btn-primary">Crie um evento agora</a>
-    </header>
+    <div class="flex-none">
+      <button class="btn btn-ghost btn-circle" aria-label="Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+          stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
 
-    <div class="overflow-x-auto px-6 pb-12">
-        <table class="table table-zebra w-full text-center shadow-md rounded-box bg-base-100">
-            <thead class="bg-neutral text-neutral-content">
-                <tr>
-                    <th>Nome</th>
-                    <th>Tipo</th>
-                    <th>Local</th>
-                    <th>Data</th>
-                    <th>Horário</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="evento : ${eventos}">
-                    <td th:text="${evento.nome}"></td>
-                    <td th:text="${evento.tipo}"></td>
-                    <td th:text="${evento.local}"></td>
-                    <td th:text="${evento.data}"></td>
-                    <td th:text="${evento.horario}"></td>
-                    <td>
-                        <a th:href="@{/detalhesEvento/{codigo}(codigo=${evento.codigo})}" class="btn btn-outline btn-sm">
-                            Ver detalhes
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+  <!-- Header -->
+  <header class="p-6 text-center">
+    <h1 class="text-3xl font-bold mb-4">Lista de Eventos</h1>
+    <a href="/cadastrarEvento" class="btn btn-primary">Crie um evento agora</a>
+  </header>
+
+  <!-- Tabela -->
+  <div class="overflow-x-auto px-6 pb-12">
+    <table class="table table-zebra w-full text-center shadow-md rounded-box bg-base-100">
+      <thead class="bg-neutral text-neutral-content">
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Local</th>
+          <th>Data</th>
+          <th>Horário</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="evento : ${eventos}">
+          <td th:text="${evento.nome}"></td>
+          <td th:text="${evento.tipo}"></td>
+          <td th:text="${evento.local}"></td>
+          <td th:text="${evento.data}"></td>
+          <td th:text="${evento.horario}"></td>
+          <td>
+            <a th:href="@{/detalhesEvento/{id_evento}(id_evento=${evento.id_evento})}" class="btn btn-outline btn-sm">
+              Ver detalhes
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <footer class="fixed bottom-0 left-0 w-full bg-base-100 shadow-md border-t border-base-300">
+    <ul class="menu menu-horizontal w-full flex justify-center py-2">
+      <li>
+        <a href="/inicio" class="tooltip tooltip-right flex flex-col items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="/listaClientes" class="tooltip tooltip-right flex flex-col items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 14c1.656 0 3-1.344 3-3s-1.344-3-3-3-3 1.344-3 3 1.344 3 3 3zM5.121 17.804A9 9 0 1118.88 17.8C16.946 15.866 14.597 15 12 15s-4.946.866-6.879 2.804z" />
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="/inicio" class="tooltip tooltip-right flex flex-col items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </footer>
 
 </body>
 </html>
