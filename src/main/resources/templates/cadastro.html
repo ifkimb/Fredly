@@ -20,9 +20,16 @@
     </div>
   </div>
  
-  <form class="bg-white p-6 rounded-lg shadow-md" method="get">
+  <form class="bg-white p-6 rounded-lg shadow-md" method="post">
       <fieldset class="border border-gray-300 p-4 rounded-lg">
-        <legend class="text-lg font-semibold text-gray-700">Login</legend>
+        <legend class="text-lg font-semibold text-gray-700">Cadastre-se</legend>
+ 
+        <div class="form-control mb-4">
+          <label class="label">
+            <span class="label-text">Nome completo</span>
+          </label>
+          <input type="text" placeholder="Digite seu nome completo" class="input input-bordered w-full" required>
+        </div>
  
         <div class="form-control mb-4">
           <label class="label">
@@ -38,10 +45,17 @@
           <input type="password" placeholder="Digite sua senha" class="input input-bordered w-full" required>
         </div>
  
-        <button type="submit" class="btn btn-primary w-full">Entrar</button>
+        <div class="form-control mb-4">
+          <label class="label">
+            <span class="label-text">Confirme sua senha</span>
+          </label>
+          <input type="password" placeholder="Digite sua senha" class="input input-bordered w-full" required>
+        </div>
+ 
+        <button type="submit" class="btn btn-primary w-full">Cadastrar</button>
  
         <p class="mt-4 text-sm text-center text-gray-500">
-          Não tem uma conta? <a href="#" class="text-blue-500 hover:underline">Cadastre-se</a>
+          Já tem uma conta? <a href="#" class="text-blue-500 hover:underline">Faça login</a>
         </p>
       </fieldset>
     </form>
