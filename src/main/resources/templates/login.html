@@ -7,46 +7,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
- 
+
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5/dist/full.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
- 
-<body class="bg-base-200 min-h-screen centralized-flex">
- 
-  <div class="navbar bg-base-100 shadow-sm">
+
+<body class="bg-base-200 min-h-screen flex flex-col items-center justify-center">
+
+  <div class="navbar bg-base-100 shadow-sm w-full mb-8 px-6">
     <div class="flex-1">
-      <a class="text-l font-bold">Fredly</a>
+      <a class="text-xl font-bold">Fredly</a>
     </div>
   </div>
- 
-  <form class="bg-white p-6 rounded-lg shadow-md" method="get">
-      <fieldset class="border border-gray-300 p-4 rounded-lg">
-        <legend class="text-lg font-semibold text-gray-700">Login</legend>
- 
-        <div class="form-control mb-4">
-          <label class="label">
-            <span class="label-text">E-mail</span>
-          </label>
-          <input type="email" placeholder="Digite seu e-mail" class="input input-bordered w-full" required>
-        </div>
- 
-        <div class="form-control mb-4">
-          <label class="label">
-            <span class="label-text">Senha</span>
-          </label>
-          <input type="password" placeholder="Digite sua senha" class="input input-bordered w-full" required>
-        </div>
- 
-        <button type="submit" class="btn btn-primary w-full">Entrar</button>
- 
-        <p class="mt-4 text-sm text-center text-gray-500">
-          Não tem uma conta? <a href="/cadastrarUsuario" class="text-blue-500 hover:underline">Cadastre-se</a>
-        </p>
-      </fieldset>
-    </form>
-  </div>
- 
+
+  <form class="bg-white p-6 rounded-lg shadow-md w-full max-w-sm"
+        action="/logarUsuario" method="post">
+
+    <fieldset class="border border-gray-300 p-4 rounded-lg">
+      <legend class="text-lg font-semibold text-gray-700">Login</legend>
+
+      <div class="form-control mb-4">
+        <label class="label">
+          <span class="label-text">E-mail</span>
+        </label>
+        <input type="email" name="email" placeholder="Digite seu e-mail"
+               class="input input-bordered w-full" required>
+      </div>
+
+      <div class="form-control mb-4">
+        <label class="label">
+          <span class="label-text">Senha</span>
+        </label>
+        <input type="password" name="senha" placeholder="Digite sua senha"
+               class="input input-bordered w-full" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-full">Entrar</button>
+
+      <p class="mt-4 text-sm text-center text-gray-500">
+        Não tem uma conta?
+        <a href="/cadastrarUsuario" class="text-blue-500 hover:underline">Cadastre-se</a>
+      </p>
+
+      <!-- Mensagem de erro opcional (Thymeleaf) -->
+      <p th:if="${erro}" class="text-red-500 text-center mt-3" th:text="${erro}"></p>
+
+    </fieldset>
+  </form>
+
 </body>
 </html>
- 
