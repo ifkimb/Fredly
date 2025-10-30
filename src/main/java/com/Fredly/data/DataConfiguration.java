@@ -16,9 +16,9 @@ public class DataConfiguration {
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("url:railway");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/Fredly");
         dataSource.setUsername("root");
-        dataSource.setPassword("password");
+        dataSource.setPassword("senha");
         return dataSource;
     }
 	

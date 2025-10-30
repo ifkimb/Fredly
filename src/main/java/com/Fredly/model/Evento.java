@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Evento implements Serializable {
@@ -26,6 +27,9 @@ public class Evento implements Serializable {
     private String local;
     private Date data;
     private LocalTime horario;
+    
+    @ManyToOne
+    private Cliente cliente;
     
     public String getNome() {
         return nome;
