@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.Fredly.model.Usuario;
 import com.Fredly.repository.UsuarioRepository;
+import com.Fredly.service.CookieService;
 
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -47,6 +48,8 @@ public class UsuarioController {
     public String logarUsuario(Usuario usuario, Model model, HttpServletResponse response) {
         Usuario usuarioLogado = ur.login(usuario.getEmail(), usuario.getSenha());
         if (usuarioLogado != null) {
+            CookieService.setCookie(response, "usuarioEmail", usuarioLogado.getEmail(), 10000);
+            CookieService.setCookie(response, "nomeUsuario", usuarioLogado.getUsername(), 10000);
            return "redirect:/inicio";
         }
         model.addAttribute("erro", "Email ou senha inválidos");
