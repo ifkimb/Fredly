@@ -6,12 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.Fredly.model.Evento;
 import com.Fredly.repository.EventoRepository;
-import org.springframework.web.bind.annotation.RequestBody;
 
 
 @Controller
@@ -52,5 +52,28 @@ public class EventoController {
         return "redirect:/inicio";
     }
     
-    
+    @GetMapping("/editar/{id_evento}")
+    public String editarEvento(@PathVariable Long id_evento, Model model) {
+        Evento evento = er.findById(id_evento)
+                .orElseThrow(() -> new IllegalArgumentException("Evento inválido: " + id_evento));
+        model.addAttribute("evento", evento);
+        return "editarEvento";
+    }
+
+    @PostMapping("/editar/{id_evento}")
+    public String atualizarEvento(@PathVariable Long id_evento, @ModelAttribute Evento eventoAtualizado) {
+        Evento eventoatt = er.findById(id_evento)
+                .orElseThrow(() -> new IllegalArgumentException("Evento inválido: " + id_evento));
+
+        eventoatt.setNome(eventoAtualizado.getNome());
+        eventoatt.setTipo(eventoAtualizado.getTipo());
+        eventoatt.setLocal(eventoAtualizado.getLocal());
+        eventoatt.setData(eventoAtualizado.getData());
+        eventoatt.setHorario(eventoAtualizado.getHorario());
+
+        
+
+        er.save(eventoatt);
+        return "redirect:/detalhesEvento/" + id_evento;
+    }
 }
