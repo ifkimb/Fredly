@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.Fredly.model.Evento;
 import com.Fredly.repository.EventoRepository;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @Controller
 public class EventoController {
@@ -43,5 +45,12 @@ public class EventoController {
         model.addAttribute("evento", evento);
         return "detalhesEvento";
     }
+
+    @PostMapping("/deletar/{id_evento}")
+    public String deletarEvento(@PathVariable Long id_evento) {
+        er.deleteById(id_evento);
+        return "redirect:/inicio";
+    }
+    
     
 }

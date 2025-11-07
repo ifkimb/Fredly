@@ -30,6 +30,9 @@
             <p><strong>Horário:</strong> <span th:text="${evento.horario}"></span></p>
 
             <div class="mt-6 flex justify-center">
+                <form th:action="@{'/deletar/' + ${evento.id_evento}}" method="post">
+                    <button type="submit" class="btn btn-danger">Excluir</button>
+                </form>
                 <a href="/inicio" class="btn btn-primary">Voltar para lista</a>
             </div>
         </div>
