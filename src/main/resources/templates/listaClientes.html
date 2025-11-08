@@ -53,6 +53,7 @@
                       <form th:action="@{'/deletarCliente/' + ${cliente.id_cliente}}" method="post">
                         <button type="submit" class="btn btn-error">Excluir</button>
                       </form>
+                      <a th:href="@{'/editarCliente/' + ${cliente.id_cliente}}" class="btn btn-warning">Editar</a>
                     </td>
                 </tr>
             </tbody>

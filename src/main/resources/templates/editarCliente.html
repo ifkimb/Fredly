@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="nord">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Evento</title>
+</head>
+<body class="bg-base-200 min-h-screen flex flex-col">
+
+    <div class="navbar bg-base-100 shadow-sm">
+        <div class="flex-1">
+            <a class="text-l"><strong>Fredly</strong></a>
+        </div>
+        <div class="avatar">
+            <div class="w-12 rounded-full">
+                <img src="https://images.icon-icons.com/2859/PNG/512/avatar_face_girl_female_woman_profile_smiley_happy_people_icon_181665.png" alt="Avatar">
+            </div>
+        </div>
+    </div>
+
+    <main class="flex-grow flex justify-center items-center p-6">
+        <form method="post" class="card bg-base-100 shadow-lg w-full max-w-md p-6 rounded-2xl border border-base-300">
+
+        <h2 class="text-2xl font-bold text-center mb-6">Edite as informações do Cliente</h2>
+
+            <div class="form-control mb-4">
+                <label class="label font-semibold">Nome do Cliente</label>
+                <input type="text" name="nomecliente" class="input input-accent w-full" placeholder="Ex: João da Silva" required />
+            </div>
+
+            <div class="form-control mb-4">
+                <label class="label font-semibold">E-mail do Cliente</label>
+                <input type="email" name="email" class="input input-accent w-full" placeholder="Ex: joao@email.com" required />
+            </div>
+
+            <div class="form-control mb-4">
+                <label class="label font-semibold">Telefone do Cliente</label>
+                <input type="text" name="telefone" class="input input-accent w-full" placeholder="Ex: (11) 91234-5678" required />
+            </div>
+
+            <div class="form-control mb-4">
+                <label class="label font-semibold">Status do Cliente</label>
+                <select name="status" class="select select-accent w-full" required>
+                    <option disabled selected>Selecione o status</option>
+                    <option>Sem status</option>
+                    <option>Cliente em potencial</option>
+                    <option>Cliente interessado</option>
+                    <option>Proposta enviada</option>
+                    <option>Em negociação</option>
+                    <option>Negócio fechado</option>
+                    <option>Cliente perdido</option>
+                </select>
+            </div>
+
+            <div class="form-control mb-4">
+                <label class="label font-semibold">Observações</label>
+                <textarea name="observacoes" class="textarea textarea-accent w-full" placeholder="Observações sobre o cliente"></textarea>
+            </div>
+
+            <div class="flex justify-between">
+                <a href="/listaClientes" class="btn btn-error w-[48%]">Cancelar</a>
+                <button type="submit" class="btn btn-success w-[48%]">Salvar Alterações</button>
+            </div>
+        </form>
+    </main>
+    
+
+</body>
+</html>
