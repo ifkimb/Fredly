@@ -49,7 +49,11 @@
                     <td th:text="${cliente.telefone}"></td>
                     <td th:text="${cliente.status}"></td>
                     <td th:text="${cliente.observacoes}"></td>
-                
+                    <td>
+                      <form th:action="@{'/deletarCliente/' + ${cliente.id_cliente}}" method="post">
+                        <button type="submit" class="btn btn-error">Excluir</button>
+                      </form>
+                    </td>
                 </tr>
             </tbody>
         </table>
